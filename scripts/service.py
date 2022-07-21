@@ -28,3 +28,24 @@ class Service:
         ]
 
         return recipe
+
+    def getQuake():
+        response = requests.get("https://cuaca-gempa-rest-api.vercel.app/quake").json()[
+            "data"
+        ]
+
+        quake = [
+            {
+                "date": response["tanggal"],
+                "time": response["jam"],
+                "coordinate": response["coordinates"],
+                "latitude": response["lintang"],
+                "longtitude": response["bujur"],
+                "magnitude": response["magnitude"],
+                "depth": response["kedalaman"],
+                "region": response["wilayah"],
+                "shakemap": response["shakemap"],
+            }
+        ]
+
+        return quake
