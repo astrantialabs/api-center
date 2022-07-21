@@ -55,5 +55,12 @@ class Service:
         return {
             "id": 1,
             "category": "Coin Flip",
-            "side": random.choice(["Head", "Tail"]),
+            "result": random.choice(["Head", "Tail"]),
+        }
+
+    def getRandomDice():
+        return {
+            "id": 1,
+            "category": "Dice",
+            "result": random.randint(1, 6),
         }

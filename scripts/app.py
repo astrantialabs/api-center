@@ -24,3 +24,8 @@ def getQuake():
 @app.get("/api/random/coinflip")
 def getRandomCoinFlip():
     return Service.getRandomCoinFlip()
+
+
+@app.get("/api/random/dice")
+def getRandomDice():
+    return Service.getRandomDice()
