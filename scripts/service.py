@@ -1,4 +1,4 @@
-import re
+import random
 import requests
 
 
@@ -36,6 +36,7 @@ class Service:
 
         quake = [
             {
+                "id": 1,
                 "date": response["tanggal"],
                 "time": response["jam"],
                 "coordinate": response["coordinates"],
@@ -49,3 +50,10 @@ class Service:
         ]
 
         return quake
+
+    def getRandomCoinFlip():
+        return {
+            "id": 1,
+            "category": "Coin Flip",
+            "side": random.choice(["Head", "Tail"]),
+        }

@@ -19,3 +19,8 @@ def getRecipe():
 @app.get("/api/quake")
 def getQuake():
     return Service.getQuake()
+
+
+@app.get("/api/random/coinflip")
+def getRandomCoinFlip():
+    return Service.getRandomCoinFlip()
