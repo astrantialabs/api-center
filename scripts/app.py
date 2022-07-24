@@ -36,6 +36,11 @@ def getReligion():
     return Service.getReligion()
 
 
+@app.get("/api/smk-major")
+def getSMKMajor():
+    return Service.getSMKMajor()
+
+
 @app.get("/api/random/coinflip")
 def getRandomCoinFlip():
     return Service.getRandomCoinFlip()

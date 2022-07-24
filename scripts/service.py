@@ -75,6 +75,12 @@ class Service:
             for index, religion in enumerate(Dependency.listOfReligion)
         ]
 
+    def getSMKMajor():
+        return [
+            {"id": index + 1, "major": major}
+            for index, major in enumerate(Dependency.listOfMajor)
+        ]
+
     def getRandomCoinFlip():
         return {
             "id": 1,
