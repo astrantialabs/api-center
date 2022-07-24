@@ -9,10 +9,15 @@ class Service:
     def getFunFact():
         response = requests.get("https://cinnabar.icaksh.my.id/api/public/daily/wiki")
 
-        funfact = [
-            {"id": index + 1, "fact": fact["tahukahAnda"]}
-            for index, fact in enumerate(response.json()["data"])
-        ]
+        funfact = []
+        for index, fact in enumerate(response.json()["data"]):
+            splittedFact = fact["tahukahAnda"].split()
+
+            splittedFact[-1] = splittedFact[-1].replace('"', "")
+
+            joinedFact = "Tahukah anda " + " ".join(splittedFact[1:])
+
+            funfact.append({"id": index + 1, "fact": joinedFact})
 
         return funfact
 
@@ -71,7 +76,7 @@ class Service:
         randomStudentNameList = random.choices(Dependency.listOfNames, k=amount)
         for studentIndex, studentName in enumerate(randomStudentNameList):
             birthDate = Utility.randomBirthDate("01-01-2004", "31-12-2006")
-            
+
             newRandomStudentObject = {
                 "id": studentIndex + 1,
                 "nis": str(studentIndex + 1).zfill(8),
