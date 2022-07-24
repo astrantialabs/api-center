@@ -35,5 +35,8 @@ class Utility:
     def randomGrade():
         return random.randint(10, 12)
 
-    def randomMajor():
+    def randomSMKMajor():
         return random.choice(Dependency.listOfSMKMajor)
+
+    def randomSMAMajor():
+        return random.choice(Dependency.listOfSMAMajor)

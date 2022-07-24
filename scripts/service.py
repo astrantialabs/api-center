@@ -81,6 +81,12 @@ class Service:
             for index, major in enumerate(Dependency.listOfSMKMajor)
         ]
 
+    def getSMAMajor():
+        return [
+            {"id": index + 1, "major": major}
+            for index, major in enumerate(Dependency.listOfSMAMajor)
+        ]
+
     def getRandomCoinFlip():
         return {
             "id": 1,
@@ -110,7 +116,29 @@ class Service:
                 "birthDate": birthDate,
                 "gender": Utility.randomGender(),
                 "grade": Utility.randomGrade(),
-                "major": Utility.randomMajor(),
+                "major": Utility.randomSMKMajor(),
+            }
+
+            randomStudentList.append(newRandomStudentObject)
+
+        return randomStudentList
+
+    def getRandomStudentSMA(amount):
+        randomStudentList = []
+        randomStudentNameList = random.choices(Dependency.listOfNames, k=amount)
+        for studentIndex, studentName in enumerate(randomStudentNameList):
+            birthDate = Utility.randomBirthDate("01-01-2004", "31-12-2006")
+
+            newRandomStudentObject = {
+                "id": studentIndex + 1,
+                "nis": str(studentIndex + 1).zfill(8),
+                "name": studentName,
+                "age": Utility.convertDateToAge(birthDate),
+                "birthPlace": Utility.randomBirthPlace(),
+                "birthDate": birthDate,
+                "gender": Utility.randomGender(),
+                "grade": Utility.randomGrade(),
+                "major": Utility.randomSMAMajor(),
             }
 
             randomStudentList.append(newRandomStudentObject)

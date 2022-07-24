@@ -41,6 +41,11 @@ def getSMKMajor():
     return Service.getSMKMajor()
 
 
+@app.get("/api/sma-major")
+def getSMAMajor():
+    return Service.getSMAMajor()
+
+
 @app.get("/api/random/coinflip")
 def getRandomCoinFlip():
     return Service.getRandomCoinFlip()
@@ -64,3 +69,18 @@ def getRandomStudentSMKByAmount(amount):
         return "Amount Needs To Be Less Than Or Equal To 10000"
     elif amount <= 10000:
         return Service.getRandomStudentSMK(amount)
+
+
+@app.get("/api/random/student/sma")
+def getRandomStudentSMA():
+    return Service.getRandomStudentSMA(100)
+
+
+@app.get("/api/random/student/sma/{amount}")
+def getRandomStudentSMAByAmount(amount):
+    amount = int(amount)
+
+    if amount > 10000:
+        return "Amount Needs To Be Less Than Or Equal To 10000"
+    elif amount <= 10000:
+        return Service.getRandomStudentSMA(amount)
