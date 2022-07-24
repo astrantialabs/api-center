@@ -6,21 +6,6 @@ from utility import Utility
 
 
 class Service:
-    def getFunFact():
-        response = requests.get("https://cinnabar.icaksh.my.id/api/public/daily/wiki")
-
-        funfact = []
-        for index, fact in enumerate(response.json()["data"]):
-            splittedFact = fact["tahukahAnda"].split()
-
-            splittedFact[-1] = splittedFact[-1].replace('"', "")
-
-            joinedFact = "Tahukah anda " + " ".join(splittedFact[1:])
-
-            funfact.append({"id": index + 1, "fact": joinedFact})
-
-        return funfact
-
     def getRecipe():
         response = requests.get("https://masak-apa.tomorisakura.vercel.app/api/recipes")
 
