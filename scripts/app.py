@@ -29,3 +29,8 @@ def getRandomCoinFlip():
 @app.get("/api/random/dice")
 def getRandomDice():
     return Service.getRandomDice()
+
+
+@app.get("/api/random/student/smk")
+def getRandomStudentSMK():
+    return Service.getRandomStudentSMK(100)

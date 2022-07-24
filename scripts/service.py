@@ -1,6 +1,9 @@
 import random
 import requests
 
+from dependency import Dependency
+from utility import Utility
+
 
 class Service:
     def getFunFact():
@@ -34,20 +37,18 @@ class Service:
             "data"
         ]
 
-        quake = [
-            {
-                "id": 1,
-                "date": response["tanggal"],
-                "time": response["jam"],
-                "coordinate": response["coordinates"],
-                "latitude": response["lintang"],
-                "longtitude": response["bujur"],
-                "magnitude": response["magnitude"],
-                "depth": response["kedalaman"],
-                "region": response["wilayah"],
-                "shakemap": response["shakemap"],
-            }
-        ]
+        quake = {
+            "id": 1,
+            "date": response["tanggal"],
+            "time": response["jam"],
+            "coordinate": response["coordinates"],
+            "latitude": response["lintang"],
+            "longtitude": response["bujur"],
+            "magnitude": response["magnitude"],
+            "depth": response["kedalaman"],
+            "region": response["wilayah"],
+            "shakemap": response["shakemap"],
+        }
 
         return quake
 
@@ -64,3 +65,25 @@ class Service:
             "category": "Dice",
             "result": random.randint(1, 6),
         }
+
+    def getRandomStudentSMK(amount):
+        randomStudentList = []
+        uniqueRandomStudentNameList = random.sample(Dependency.listOfNames, amount)
+        for studentIndex, studentName in enumerate(uniqueRandomStudentNameList):
+            birthDate = Utility.randomBirthDate("01-01-2004", "31-12-2006")
+            
+            newRandomStudentObject = {
+                "id": studentIndex + 1,
+                "nis": str(studentIndex + 1).zfill(8),
+                "name": studentName,
+                "age": Utility.convertDateToAge(birthDate),
+                "birthPlace": Utility.randomBirthPlace(),
+                "birthDate": birthDate,
+                "gender": Utility.randomGender(),
+                "grade": Utility.randomGrade(),
+                "major": Utility.randomMajor(),
+            }
+
+            randomStudentList.append(newRandomStudentObject)
+
+        return randomStudentList
