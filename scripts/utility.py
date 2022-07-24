@@ -1,3 +1,4 @@
+import json
 import random
 import time
 import datetime
@@ -8,6 +9,10 @@ from dependency import Dependency
 
 
 class Utility:
+    def writeJSON(path, data):
+        with open(path, "w") as outfile:
+            outfile.write(json.dumps(data, indent=4))
+
     def convertDateToAge(birthString):
         currentDate = datetime.datetime.today()
         birthDate = datetime.datetime.strptime(birthString, "%d-%m-%Y")
