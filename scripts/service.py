@@ -68,8 +68,8 @@ class Service:
 
     def getRandomStudentSMK(amount):
         randomStudentList = []
-        uniqueRandomStudentNameList = random.sample(Dependency.listOfNames, amount)
-        for studentIndex, studentName in enumerate(uniqueRandomStudentNameList):
+        randomStudentNameList = random.choices(Dependency.listOfNames, k=amount)
+        for studentIndex, studentName in enumerate(randomStudentNameList):
             birthDate = Utility.randomBirthDate("01-01-2004", "31-12-2006")
             
             newRandomStudentObject = {

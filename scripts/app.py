@@ -34,3 +34,13 @@ def getRandomDice():
 @app.get("/api/random/student/smk")
 def getRandomStudentSMK():
     return Service.getRandomStudentSMK(100)
+
+
+@app.get("/api/random/student/smk/{amount}")
+def getRandomStudentSMKByAmount(amount):
+    amount = int(amount)
+
+    if amount > 10000:
+        return "Amount Needs To Be Less Than Or Equal To 10000"
+    elif amount <= 10000:
+        return Service.getRandomStudentSMK(amount)
