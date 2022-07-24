@@ -21,6 +21,11 @@ def getEarthquake():
     return Service.getEarthquake()
 
 
+@app.get("/api/name")
+def getName():
+    return Service.getName()
+
+
 @app.get("/api/random/coinflip")
 def getRandomCoinFlip():
     return Service.getRandomCoinFlip()

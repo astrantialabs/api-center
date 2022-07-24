@@ -57,6 +57,12 @@ class Service:
 
         return earthquake
 
+    def getName():
+        return [
+            {"id": index + 1, "name": name}
+            for index, name in enumerate(Dependency.listOfNames)
+        ]
+
     def getRandomCoinFlip():
         return {
             "id": 1,
