@@ -2486,7 +2486,7 @@ class Dependency:
 
     listOfReligion = ["Islam", "Protestan", "Katolik", "Buddha", "Hindu", "Khonghucu"]
 
-    listOfMajor = [
+    listOfSMKMajor = [
         "Bisnis Konstruksi dan Properti",
         "Desain Permodelan dan Informasi Bangunan",
         "Teknik Instalasi Tenaga Listrik",
@@ -2521,4 +2521,10 @@ class Dependency:
         "Agrobisnis Pengolahan Hasil Perikanan",
         "Teknik Instalasi Tenaga Listrik",
         "Teknik Sepeda Motor",
+    ]
+
+    listOfSMAMajor = [
+        "Bahasa Indonesia",
+        "Ilmu Pengetahuan Alam",
+        "Ilmu Pengetahuan Sosial",
     ]

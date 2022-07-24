@@ -78,7 +78,7 @@ class Service:
     def getSMKMajor():
         return [
             {"id": index + 1, "major": major}
-            for index, major in enumerate(Dependency.listOfMajor)
+            for index, major in enumerate(Dependency.listOfSMKMajor)
         ]
 
     def getRandomCoinFlip():

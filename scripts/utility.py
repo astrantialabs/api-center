@@ -36,4 +36,4 @@ class Utility:
         return random.randint(10, 12)
 
     def randomMajor():
-        return random.choice(Dependency.listOfMajor)
+        return random.choice(Dependency.listOfSMKMajor)
