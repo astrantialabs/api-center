@@ -63,6 +63,12 @@ class Service:
             for index, name in enumerate(Dependency.listOfNames)
         ]
 
+    def getBirthPlace():
+        return [
+            {"id": index + 1, "birthPlace": birthPlace}
+            for index, birthPlace in enumerate(Dependency.listOfBirthPlace)
+        ]
+
     def getRandomCoinFlip():
         return {
             "id": 1,

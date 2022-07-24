@@ -26,6 +26,11 @@ def getName():
     return Service.getName()
 
 
+@app.get("/api/birth-place")
+def getBirthPlace():
+    return Service.getBirthPlace()
+
+
 @app.get("/api/random/coinflip")
 def getRandomCoinFlip():
     return Service.getRandomCoinFlip()
