@@ -17,7 +17,7 @@ class Utility:
         return intervalDate.years
 
     def randomBirthPlace():
-        return random.choice(Dependency.listOfBirthPlace)
+        return random.choice(Dependency.birthPlaceList)
 
     def randomBirthDate(start, end):
         timeFormat = "%d-%m-%Y"
@@ -36,7 +36,7 @@ class Utility:
         return random.randint(10, 12)
 
     def randomSMKMajor():
-        return random.choice(Dependency.listOfSMKMajor)
+        return random.choice(Dependency.smkMajorList)
 
     def randomSMAMajor():
-        return random.choice(Dependency.listOfSMAMajor)
+        return random.choice(Dependency.smaMajorList)

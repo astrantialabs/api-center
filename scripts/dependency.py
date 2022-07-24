@@ -1,5 +1,5 @@
 class Dependency:
-    listOfNames = [
+    nameList = [
         "A. Prabhu",
         "A. Budi Pranoto",
         "AAJ Batavia",
@@ -2400,7 +2400,7 @@ class Dependency:
         "Zuriah",
     ]
 
-    listOfBirthPlace = [
+    birthPlaceList = [
         "Aceh",
         "Bali",
         "Balikpapan",
@@ -2484,9 +2484,9 @@ class Dependency:
         "Medan",
     ]
 
-    listOfReligion = ["Islam", "Protestan", "Katolik", "Buddha", "Hindu", "Khonghucu"]
+    religionList = ["Islam", "Protestan", "Katolik", "Buddha", "Hindu", "Khonghucu"]
 
-    listOfSMKMajor = [
+    smkMajorList = [
         "Bisnis Konstruksi dan Properti",
         "Desain Permodelan dan Informasi Bangunan",
         "Teknik Instalasi Tenaga Listrik",
@@ -2523,7 +2523,7 @@ class Dependency:
         "Teknik Sepeda Motor",
     ]
 
-    listOfSMAMajor = [
+    smaMajorList = [
         "Bahasa Indonesia",
         "Ilmu Pengetahuan Alam",
         "Ilmu Pengetahuan Sosial",

@@ -45,31 +45,31 @@ class Service:
     def getName():
         return [
             {"id": index + 1, "name": name}
-            for index, name in enumerate(Dependency.listOfNames)
+            for index, name in enumerate(Dependency.nameList)
         ]
 
     def getBirthPlace():
         return [
             {"id": index + 1, "birthPlace": birthPlace}
-            for index, birthPlace in enumerate(Dependency.listOfBirthPlace)
+            for index, birthPlace in enumerate(Dependency.birthPlaceList)
         ]
 
     def getReligion():
         return [
             {"id": index + 1, "religion": religion}
-            for index, religion in enumerate(Dependency.listOfReligion)
+            for index, religion in enumerate(Dependency.religionList)
         ]
 
     def getSMKMajor():
         return [
             {"id": index + 1, "major": major}
-            for index, major in enumerate(Dependency.listOfSMKMajor)
+            for index, major in enumerate(Dependency.smkMajorList)
         ]
 
     def getSMAMajor():
         return [
             {"id": index + 1, "major": major}
-            for index, major in enumerate(Dependency.listOfSMAMajor)
+            for index, major in enumerate(Dependency.smaMajorList)
         ]
 
     def getRandomCoinFlip():
@@ -88,7 +88,7 @@ class Service:
 
     def getRandomStudentSMK(amount):
         randomStudentList = []
-        randomStudentNameList = random.choices(Dependency.listOfNames, k=amount)
+        randomStudentNameList = random.choices(Dependency.nameList, k=amount)
         for studentIndex, studentName in enumerate(randomStudentNameList):
             birthDate = Utility.randomBirthDate("01-01-2004", "31-12-2006")
 
@@ -110,7 +110,7 @@ class Service:
 
     def getRandomStudentSMA(amount):
         randomStudentList = []
-        randomStudentNameList = random.choices(Dependency.listOfNames, k=amount)
+        randomStudentNameList = random.choices(Dependency.nameList, k=amount)
         for studentIndex, studentName in enumerate(randomStudentNameList):
             birthDate = Utility.randomBirthDate("01-01-2004", "31-12-2006")
 
