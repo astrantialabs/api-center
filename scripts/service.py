@@ -37,12 +37,12 @@ class Service:
 
         return recipe
 
-    def getQuake():
+    def getEarthquake():
         response = requests.get("https://cuaca-gempa-rest-api.vercel.app/quake").json()[
             "data"
         ]
 
-        quake = {
+        earthquake = {
             "id": 1,
             "date": response["tanggal"],
             "time": response["jam"],
@@ -55,7 +55,7 @@ class Service:
             "shakemap": response["shakemap"],
         }
 
-        return quake
+        return earthquake
 
     def getRandomCoinFlip():
         return {

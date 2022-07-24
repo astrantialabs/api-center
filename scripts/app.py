@@ -16,9 +16,9 @@ def getRecipe():
     return Service.getRecipe()
 
 
-@app.get("/api/quake")
-def getQuake():
-    return Service.getQuake()
+@app.get("/api/earthquake")
+def getEarthquake():
+    return Service.getEarthquake()
 
 
 @app.get("/api/random/coinflip")
