@@ -6,15 +6,16 @@ class Translate:
     def route():
         workbook = Excel("./excel/route.xlsx")
 
-        routeData = workbook.get_value_multiple_2d("E5", "G17")
+        routeData = workbook.get_value_multiple_2d("E5", "H17")
 
         routeList = []
         for routeIndex, route in enumerate(routeData):
             routeObject = {
                 "id": routeIndex + 1,
                 "route": route[0],
-                "parameter": route[1],
-                "description": route[2],
+                "example": route[1],
+                "parameter": route[2],
+                "description": route[3],
             }
 
             routeList.append(routeObject)
