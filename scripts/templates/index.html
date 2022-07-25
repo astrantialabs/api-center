@@ -6,8 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>API Center</title>
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    
+
         <style>
             * {
                 font-family: "Be Vietnam Pro", sans-serif;
@@ -30,97 +34,14 @@
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td class="has-text-centered">1</td>
-                        <td><a href="/api/recipe">/recipe</a></td>
-                        <td></td>
-                        <td>List of Recipes</td>
-                    </tr>  
-
-                    <!-- <tr>
-                        <td class="has-text-centered">2</td>
-                        <td>/earthquake</td>
-                        <td></td>
-                        <td></td>
-                    </tr>  
-
-                    <tr>
-                        <td class="has-text-centered">3</td>
-                        <td>/name</td>
-                        <td></td>
-                        <td></td>
-                    </tr>  
-
-                    <tr>
-                        <td class="has-text-centered">4</td>
-                        <td>/birth-place</td>
-                        <td></td>
-                        <td></td>
-                    </tr>  
-
-                    <tr>
-                        <td class="has-text-centered">5</td>
-                        <td>/religion</td>
-                        <td></td>
-                        <td></td>
-                    </tr>  
-
-                    <tr>
-                        <td class="has-text-centered">6</td>
-                        <td>/smk-major</td>
-                        <td></td>
-                        <td></td>
-                    </tr>  
-
-                    <tr>
-                        <td class="has-text-centered">7</td>
-                        <td>/sma-major</td>
-                        <td></td>
-                        <td></td>
-                    </tr>  
-
-                    <tr>
-                        <td class="has-text-centered">8</td>
-                        <td>/random/coinflip</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td class="has-text-centered">9</td>
-                        <td>/random/dice</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td class="has-text-centered">10</td>
-                        <td>/random/student/smk</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td class="has-text-centered">11</td>
-                        <td>/random/student/smk/{amount}</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td class="has-text-centered">12</td>
-                        <td>/random/student/sma</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td class="has-text-centered">13</td>
-                        <td>/random/student/sma/{amount}</td>
-                        <td></td>
-                        <td></td>
-                    </tr> -->
-
+                    {% for route in routeList %}
+                        <tr>
+                            <td class="has-text-centered">{{route.id}}</td>
+                            <td><a href="/api/{{route.route}}">/{{route.route}}</a></td>
+                            <td>{{route.parameter}}</td>
+                            <td>{{route.description}}</td>
+                        </tr>  
+                    {% endfor %}
                 </tbody>
             </table>
         </div>

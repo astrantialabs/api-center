@@ -4,6 +4,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
 from service import Service
+from dependency import Dependency
 
 
 app = FastAPI()
@@ -14,7 +15,9 @@ templates = Jinja2Templates(directory="templates")
 
 @app.get("/", response_class=HTMLResponse)
 def index(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse(
+        "index.html", {"request": request, "routeList": Dependency.routeList}
+    )
 
 
 @app.get("/api/recipe")
