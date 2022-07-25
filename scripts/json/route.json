@@ -3,70 +3,70 @@
         "id": 1,
         "route": "recipe",
         "example": "recipe",
-        "parameter": null,
+        "parameter": "",
         "description": "List of recipes"
     },
     {
         "id": 2,
         "route": "earthquake",
         "example": "earthquake",
-        "parameter": null,
+        "parameter": "",
         "description": "Latest earthquake event"
     },
     {
         "id": 3,
         "route": "name",
         "example": "name",
-        "parameter": null,
+        "parameter": "",
         "description": "List of names"
     },
     {
         "id": 4,
         "route": "birth-place",
         "example": "birth-place",
-        "parameter": null,
+        "parameter": "",
         "description": "List of birth places"
     },
     {
         "id": 5,
         "route": "religion",
         "example": "religion",
-        "parameter": null,
+        "parameter": "",
         "description": "List of religion"
     },
     {
         "id": 6,
         "route": "smk-major",
         "example": "smk-major",
-        "parameter": null,
+        "parameter": "",
         "description": "List of smk majors"
     },
     {
         "id": 7,
         "route": "sma-major",
         "example": "sma-major",
-        "parameter": null,
+        "parameter": "",
         "description": "List of sma major"
     },
     {
         "id": 8,
         "route": "random/coinflip",
         "example": "random/coinflip",
-        "parameter": null,
+        "parameter": "",
         "description": "Coinflip random event"
     },
     {
         "id": 9,
         "route": "random/dice",
         "example": "random/dice",
-        "parameter": null,
+        "parameter": "",
         "description": "Dice random event"
     },
     {
         "id": 10,
         "route": "random/student/smk",
         "example": "random/student/smk",
-        "parameter": null,
+        "parameter": "",
         "description": "Random SMK students"
     },
     {
@@ -80,7 +80,7 @@
         "id": 12,
         "route": "random/student/sma",
         "example": "random/student/sma",
-        "parameter": null,
+        "parameter": "",
         "description": "Random SMA students"
     },
     {

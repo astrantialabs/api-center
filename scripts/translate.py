@@ -14,7 +14,7 @@ class Translate:
                 "id": routeIndex + 1,
                 "route": route[0],
                 "example": route[1],
-                "parameter": route[2],
+                "parameter": "" if route[2] is None else route[2],
                 "description": route[3],
             }
 
