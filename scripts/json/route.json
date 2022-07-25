@@ -1,0 +1,80 @@
+[
+    {
+        "id": 1,
+        "route": "recipe",
+        "parameter": null,
+        "description": "List of recipes"
+    },
+    {
+        "id": 2,
+        "route": "earthquake",
+        "parameter": null,
+        "description": "Latest earthquake event"
+    },
+    {
+        "id": 3,
+        "route": "name",
+        "parameter": null,
+        "description": "List of names"
+    },
+    {
+        "id": 4,
+        "route": "birth-place",
+        "parameter": null,
+        "description": "List of birth places"
+    },
+    {
+        "id": 5,
+        "route": "religion",
+        "parameter": null,
+        "description": "List of religion"
+    },
+    {
+        "id": 6,
+        "route": "smk-major",
+        "parameter": null,
+        "description": "List of smk majors"
+    },
+    {
+        "id": 7,
+        "route": "sma-major",
+        "parameter": null,
+        "description": "List of sma major"
+    },
+    {
+        "id": 8,
+        "route": "random/coinflip",
+        "parameter": null,
+        "description": "Coinflip random event"
+    },
+    {
+        "id": 9,
+        "route": "random/dice",
+        "parameter": null,
+        "description": "Dice random event"
+    },
+    {
+        "id": 10,
+        "route": "random/student/smk",
+        "parameter": null,
+        "description": "Random SMK students"
+    },
+    {
+        "id": 11,
+        "route": "random/student/smk/{amount}",
+        "parameter": "Amount determines the amount of data",
+        "description": "Random SMK students based on requested amount"
+    },
+    {
+        "id": 12,
+        "route": "random/student/sma",
+        "parameter": null,
+        "description": "Random SMA students"
+    },
+    {
+        "id": 13,
+        "route": "random/student/sma/{amount}",
+        "parameter": "Amount determines the amount of data",
+        "description": "Random SMA students based on requested amount"
+    }
+]

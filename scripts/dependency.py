@@ -1,4 +1,9 @@
+import json
+
+
 class Dependency:
+    routeList = json.load(open("./json/route.json"))
+
     nameList = [
         "A. Prabhu",
         "A. Budi Pranoto",
