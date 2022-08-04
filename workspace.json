@@ -1,0 +1,14 @@
+{
+    "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+    "version": 2,
+    "projects": {
+        "api": "apps/api",
+        "api-authorization": "libs/api/authorization",
+        "api-common": "libs/api/common",
+        "api-database": "libs/api/database",
+        "api-users": "libs/api/users",
+        "client": "apps/client",
+        "client-e2e": "apps/client-e2e",
+        "typings": "libs/typings"
+    }
+}
