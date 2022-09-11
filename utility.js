@@ -31,3 +31,7 @@ export function nis(value) {
 export function randomBirthPlace() {
     return birthPlaceArray[randomInteger(0, birthPlaceArray.length - 1)];
 }
+
+export function randomGender() {
+    return randomInteger(0, 1) ? "Laki-Laki" : "Perempuan";
+}
