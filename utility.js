@@ -25,3 +25,7 @@ export function zfill(value, fillValue, fillLength) {
 export function nis(value) {
     return zfill(String(value), "0", 8);
 }
+
+export function randomBirthPlace() {
+    return birthPlaceArray[randomInteger(0, birthPlaceArray.length - 1)];
+}
