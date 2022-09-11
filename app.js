@@ -38,3 +38,11 @@ app.get("/api/religion", (req, res) => {
 
     res.json(religionResponse);
 });
+
+app.get("/api/smk-major", (req, res) => {
+    const smkMajorResponse = smkMajorArray.map((smkMajor, smkMajorIndex) => {
+        return { id: smkMajorIndex + 1, smkMajor: smkMajor };
+    });
+
+    res.json(smkMajorResponse);
+});
