@@ -1,8 +1,8 @@
 import express from "express";
-import { routeArray, nameArray, birthPlaceArray, religionArray, smkMajorArray, smaMajorArray } from "./dependency.js";
+import { port, routeArray, nameArray, birthPlaceArray, religionArray, smkMajorArray, smaMajorArray } from "./dependency.js";
+import { randomInteger, randomUniqueInteger } from "./utility.js";
 
 const app = express();
-const port = 3000;
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -14,6 +14,8 @@ app.listen(port, () => {
 app.get("/", (req, res) => {
     res.render("index", { routeArray });
 });
+
+//#region Static
 
 app.get("/api/name", (req, res) => {
     const nameResponse = nameArray.map((name, nameIndex) => {
@@ -54,3 +56,13 @@ app.get("/api/sma-major", (req, res) => {
 
     res.json(smaMajorResponse);
 });
+
+//#endregion Static
+
+//#region Random
+
+app.get("/api/random/coinflip", (req, res) => {
+    res.json({ id: 1, type: "coinflip", value: randomInteger(0, 1) });
+});
+
+//#endregion Random
