@@ -21,3 +21,7 @@ export function randomUniqueInteger(min, max, amount) {
 export function zfill(value, fillValue, fillLength) {
     return fillValue.repeat(fillLength - value.length) + value;
 }
+
+export function nis(value) {
+    return zfill(String(value), "0", 8);
+}
