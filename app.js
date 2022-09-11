@@ -22,3 +22,11 @@ app.get("/api/name", (req, res) => {
 
     res.json(nameResponse);
 });
+
+app.get("/api/birth-place", (req, res) => {
+    const birthPlaceResponse = birthPlaceArray.map((birthPlace, birthPlaceIndex) => {
+        return { id: birthPlaceIndex + 1, birthPlace: birthPlace };
+    });
+
+    res.json(birthPlaceResponse);
+});
