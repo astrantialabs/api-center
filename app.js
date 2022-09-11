@@ -65,4 +65,8 @@ app.get("/api/random/coinflip", (req, res) => {
     res.json({ id: 1, type: "coinflip", value: randomInteger(0, 1) });
 });
 
+app.get("/api/random/dice", (req, res) => {
+    res.json({ id: 1, type: "dice", value: randomInteger(1, 6) });
+});
+
 //#endregion Random
