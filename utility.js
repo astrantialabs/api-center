@@ -1,5 +1,11 @@
 import { birthPlaceArray, smkMajorArray } from "./dependency.js";
 
+const gradeObject = {
+    0: "X",
+    1: "XI",
+    2: "XII",
+};
+
 export function randomInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
@@ -34,6 +40,12 @@ export function randomBirthPlace() {
 
 export function randomGender() {
     return randomInteger(0, 1) ? "Laki-Laki" : "Perempuan";
+}
+
+export function randomGrade() {
+    const randomIntergerValue = randomInteger(0, 2);
+
+    return gradeObject[randomIntergerValue];
 }
 
 export function randomSMKMajor() {
