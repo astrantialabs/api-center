@@ -46,3 +46,11 @@ app.get("/api/smk-major", (req, res) => {
 
     res.json(smkMajorResponse);
 });
+
+app.get("/api/sma-major", (req, res) => {
+    const smaMajorResponse = smaMajorArray.map((smaMajor, smaMajorIndex) => {
+        return { id: smaMajorIndex + 1, smaMajor: smaMajor };
+    });
+
+    res.json(smaMajorResponse);
+});
