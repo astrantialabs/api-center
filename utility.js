@@ -17,3 +17,7 @@ export function randomUniqueInteger(min, max, amount) {
 
     return randomUniqueIntegerArray;
 }
+
+export function zfill(value, fillValue, fillLength) {
+    return fillValue.repeat(fillLength - value.length) + value;
+}
