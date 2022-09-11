@@ -1,4 +1,4 @@
-import { birthPlaceArray } from "./dependency.js";
+import { birthPlaceArray, smkMajorArray } from "./dependency.js";
 
 export function randomInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -34,4 +34,8 @@ export function randomBirthPlace() {
 
 export function randomGender() {
     return randomInteger(0, 1) ? "Laki-Laki" : "Perempuan";
+}
+
+export function randomSMKMajor() {
+    return smkMajorArray[randomInteger(0, smkMajorArray.length - 1)];
 }
