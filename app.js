@@ -30,3 +30,11 @@ app.get("/api/birth-place", (req, res) => {
 
     res.json(birthPlaceResponse);
 });
+
+app.get("/api/religion", (req, res) => {
+    const religionResponse = religionArray.map((religion, religionIndex) => {
+        return { id: religionIndex + 1, religion: religion };
+    });
+
+    res.json(religionResponse);
+});
