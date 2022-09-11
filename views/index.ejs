@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>API Center</title>
+
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+
+    <body>
+        <section class="hero is-fullheight" id="home_page">
+            <div class="hero-head">
+                <nav class="navbar">
+                    <div class="container">
+                        <div class="navbar-menu">
+                            <div class="navbar-end">
+                                <a href="#home_page" class="navbar-item has-text-light">Home</a>
+                                <a href="#about_page" class="navbar-item has-text-light">About</a>
+                                <a href="#route_page" class="navbar-item has-text-light">Route</a>
+                                <a href="#contributor_page" class="navbar-item has-text-light">Contributor</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <div class="title is-1 has-text-light">API Center</div>
+                    <div class="subtitle is-3 has-text-light">Central of static and random data</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section is-small has-background-light" id="about_page">
+            <div class="container">
+                <div class="content">
+                    <div class="title">About API Center</div>
+                    <div class="subtitle has-text-justified">
+                        An Application Programming Interface or known as API is used for applications' data and functionality to be able to be accessed or used by other external third-party
+                        developers, systems, and even other applications. This allows them to be able to communicate with each other through an interface in order to complete such tasks.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section is-small has-background-light" id="route_page">
+            <div class="container">
+                <div class="content">
+                    <div class="title">Route API Center</div>
+                    <table class="table is-bordered is-striped is-fullwidth is-hoverable">
+                        <thead>
+                            <tr>
+                                <th class="has-text-centered">No.</th>
+                                <th class="has-text-centered">Route</th>
+                                <th class="has-text-centered">Parameter</th>
+                                <th class="has-text-centered">Description</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <% let routeCount = 0; routeArray.forEach(route => { routeCount += 1; %>
+                            <tr>
+                                <td class="has-text-centered"><%= routeCount %></td>
+                                <td>
+                                    <a href="/api/<%= route.example %>">/api/<%= route.route %></a>
+                                </td>
+                                <td><%= route.parameter %></td>
+                                <td><%= route.description %></td>
+                            </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer has-background-light" id="contributor_page">
+            <div class="content has-text-centered">
+                <p>Dibuat dan Dikembangkan oleh</p>
+                <h6>
+                    <a href="https://github.com/sorystia1">Muhammad Farhan</a>, <a href="https://github.com/NotHydra">Rizky Irswanda</a> & <a href="https://github.com/yehezkieldio">Yehezkiel Dio</a>
+                </h6>
+            </div>
+        </footer>
+    </body>
+</html>
