@@ -1,5 +1,5 @@
 import express from "express";
-import { port, routeArray, nameArray, birthPlaceArray, religionArray, smkMajorArray, smaMajorArray } from "./dependency.js";
+import { port, routeArray, markdownBadgeArray, nameArray, birthPlaceArray, religionArray, smkMajorArray, smaMajorArray } from "./dependency.js";
 import { randomInteger, randomStudentSMA, randomStudentSMK } from "./utility.js";
 
 const app = express();
@@ -12,7 +12,7 @@ app.listen(port, () => {
 });
 
 app.get("/", (req, res) => {
-    res.render("index", { routeArray });
+    res.render("index", { routeArray, markdownBadgeArray });
 });
 
 //#region Static
