@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
 
 //#region Static
 
-app.get("/api/name", (req, res) => {
+app.get("/api/static/name", (req, res) => {
     const nameResponse = nameArray.map((name, nameIndex) => {
         return { id: nameIndex + 1, name: name };
     });
@@ -25,7 +25,7 @@ app.get("/api/name", (req, res) => {
     res.json(nameResponse);
 });
 
-app.get("/api/birth-place", (req, res) => {
+app.get("/api/static/birth-place", (req, res) => {
     const birthPlaceResponse = birthPlaceArray.map((birthPlace, birthPlaceIndex) => {
         return { id: birthPlaceIndex + 1, birthPlace: birthPlace };
     });
@@ -33,7 +33,7 @@ app.get("/api/birth-place", (req, res) => {
     res.json(birthPlaceResponse);
 });
 
-app.get("/api/religion", (req, res) => {
+app.get("/api/static/religion", (req, res) => {
     const religionResponse = religionArray.map((religion, religionIndex) => {
         return { id: religionIndex + 1, religion: religion };
     });
@@ -41,7 +41,7 @@ app.get("/api/religion", (req, res) => {
     res.json(religionResponse);
 });
 
-app.get("/api/smk-major", (req, res) => {
+app.get("/api/static/smk-major", (req, res) => {
     const smkMajorResponse = smkMajorArray.map((smkMajor, smkMajorIndex) => {
         return { id: smkMajorIndex + 1, smkMajor: smkMajor };
     });
@@ -49,7 +49,7 @@ app.get("/api/smk-major", (req, res) => {
     res.json(smkMajorResponse);
 });
 
-app.get("/api/sma-major", (req, res) => {
+app.get("/api/static/sma-major", (req, res) => {
     const smaMajorResponse = smaMajorArray.map((smaMajor, smaMajorIndex) => {
         return { id: smaMajorIndex + 1, smaMajor: smaMajor };
     });
