@@ -1,4 +1,4 @@
-import { birthPlaceArray, nameArray, smkMajorArray } from "./dependency.js";
+import { birthPlaceArray, nameArray, smaMajorArray, smkMajorArray } from "./dependency.js";
 
 const gradeObject = {
     0: "X",
@@ -87,6 +87,10 @@ export function randomGrade() {
 
 export function randomSMKMajor() {
     return smkMajorArray[randomInteger(0, smkMajorArray.length - 1)];
+}
+
+export function randomSMAMajor() {
+    return smaMajorArray[randomInteger(0, smaMajorArray.length - 1)];
 }
 
 export function randomStudentSMK(amount) {
