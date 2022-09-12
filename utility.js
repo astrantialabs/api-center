@@ -34,6 +34,21 @@ export function nis(value) {
     return zfill(String(value), "0", 8);
 }
 
+export function dateToAge(dateString) {
+    const dateArray = dateString.split("-");
+    const dateObject = new Date(dateArray[2], parseInt(dateArray[1]) - 1, parseInt(dateArray[0]) + 1);
+
+    const currentDateObject = new Date();
+
+    let age = currentDateObject.getFullYear() - dateObject.getFullYear();
+    const monthAge = currentDateObject.getMonth() - dateObject.getMonth();
+    if (monthAge < 0 || (monthAge === 0 && currentDateObject.getDate() < dateObject.getDate())) {
+        age--;
+    }
+
+    return age;
+}
+
 export function randomBirthPlace() {
     return birthPlaceArray[randomInteger(0, birthPlaceArray.length - 1)];
 }
