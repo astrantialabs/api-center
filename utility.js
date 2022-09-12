@@ -90,21 +90,21 @@ export function randomSMKMajor() {
 }
 
 export function randomStudentSMK(amount) {
-    let randomNameArray;
+    let randomIntegerArray;
 
     if (amount > nameArray.length) {
-        randomNameArray = randomIntegerArray(0, nameArray.length - 1, amount);
+        randomIntegerArray = randomIntegerArray(0, nameArray.length - 1, amount);
     } else if (amount <= nameArray.length) {
-        randomNameArray = randomUniqueIntegerArray(0, nameArray.length - 1, amount);
+        randomIntegerArray = randomUniqueIntegerArray(0, nameArray.length - 1, amount);
     }
 
-    const studentSMKResponse = randomNameArray.map((randomValue, randomIndex) => {
+    const studentSMKResponse = randomIntegerArray.map((integerValue, integerIndex) => {
         const randomBirthDateValue = randomBirthDate("01-01-2004", "31-12-2006");
 
         return {
-            id: randomIndex + 1,
-            nis: nis(randomIndex + 1),
-            name: nameArray[randomValue],
+            id: integerIndex + 1,
+            nis: nis(integerIndex + 1),
+            name: nameArray[integerValue],
             age: dateToAge(randomBirthDateValue),
             birthPlace: randomBirthPlace(),
             birthDate: randomBirthDateValue,
