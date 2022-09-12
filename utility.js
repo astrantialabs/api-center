@@ -1,4 +1,4 @@
-import { birthPlaceArray, smkMajorArray } from "./dependency.js";
+import { birthPlaceArray, nameArray, smkMajorArray } from "./dependency.js";
 
 const gradeObject = {
     0: "X",
@@ -77,4 +77,26 @@ export function randomGrade() {
 
 export function randomSMKMajor() {
     return smkMajorArray[randomInteger(0, smkMajorArray.length - 1)];
+}
+
+export function randomStudentSMK(amount) {
+    const randomUniqueIntegerArray = randomUniqueInteger(0, nameArray.length - 1, amount);
+
+    const studentSMKResponse = randomUniqueIntegerArray.map((randomValue, randomIndex) => {
+        const randomBirthDateValue = randomBirthDate("01-01-2004", "31-12-2006");
+
+        return {
+            id: randomIndex + 1,
+            nis: nis(randomIndex + 1),
+            name: nameArray[randomValue],
+            age: dateToAge(randomBirthDateValue),
+            birthPlace: randomBirthPlace(),
+            birthDate: randomBirthDateValue,
+            gender: randomGender(),
+            grade: randomGrade(),
+            major: randomSMKMajor(),
+        };
+    });
+
+    return studentSMKResponse;
 }
