@@ -38,6 +38,18 @@ export function randomBirthPlace() {
     return birthPlaceArray[randomInteger(0, birthPlaceArray.length - 1)];
 }
 
+export function randomBirthDate(start, end) {
+    const startArray = start.split("-");
+    const startDate = new Date(startArray[2], parseInt(startArray[1]) - 1, parseInt(startArray[0]) + 1);
+
+    const endArray = end.split("-");
+    const endDate = new Date(endArray[2], parseInt(endArray[1]) - 1, parseInt(endArray[0]) + 1);
+
+    const randomBirthDate = new Date(startDate.getTime() + Math.random() * (endDate.getTime() - startDate.getTime()));
+
+    return `${randomBirthDate.getDate()}-${randomBirthDate.getMonth()}-${randomBirthDate.getFullYear()}`;
+}
+
 export function randomGender() {
     return randomInteger(0, 1) ? "Laki-Laki" : "Perempuan";
 }
