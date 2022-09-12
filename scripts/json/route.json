@@ -4,76 +4,150 @@
         "route": "static/name",
         "example": "static/name",
         "parameter": "",
-        "description": "Static list of names"
+        "description": "Static list of names",
+        "attribute": [
+            "Id",
+            "Name"
+        ]
     },
     {
         "id": 2,
         "route": "static/birth-place",
         "example": "static/birth-place",
         "parameter": "",
-        "description": "Static list of birth places"
+        "description": "Static list of birth places",
+        "attribute": [
+            "Id",
+            "Birth Place"
+        ]
     },
     {
         "id": 3,
         "route": "static/religion",
         "example": "static/religion",
         "parameter": "",
-        "description": "Static list of religion"
+        "description": "Static list of religion",
+        "attribute": [
+            "Id",
+            "Religion"
+        ]
     },
     {
         "id": 4,
         "route": "static/smk-major",
         "example": "static/smk-major",
         "parameter": "",
-        "description": "Static list of smk majors"
+        "description": "Static list of smk majors",
+        "attribute": [
+            "Id",
+            "SMK Major"
+        ]
     },
     {
         "id": 5,
         "route": "static/sma-major",
         "example": "static/sma-major",
         "parameter": "",
-        "description": "Static list of sma major"
+        "description": "Static list of sma major",
+        "attribute": [
+            "Id",
+            "SMA Major"
+        ]
     },
     {
         "id": 6,
         "route": "random/coinflip",
         "example": "random/coinflip",
         "parameter": "",
-        "description": "Coinflip random event"
+        "description": "Coinflip random event",
+        "attribute": [
+            "Id",
+            "Type",
+            "Value"
+        ]
     },
     {
         "id": 7,
         "route": "random/dice",
         "example": "random/dice",
         "parameter": "",
-        "description": "Dice random event"
+        "description": "Dice random event",
+        "attribute": [
+            "Id",
+            "Type",
+            "Value"
+        ]
     },
     {
         "id": 8,
         "route": "random/student/smk",
         "example": "random/student/smk",
         "parameter": "",
-        "description": "Random list of SMK students"
+        "description": "Random list of SMK students",
+        "attribute": [
+            "Id",
+            "NIS",
+            "Name",
+            "Age",
+            "Birth Place",
+            "Birth Date",
+            "Gender",
+            "Grade",
+            "Major"
+        ]
     },
     {
         "id": 9,
-        "route": "random/student/smk/amount/{amount}",
+        "route": "random/student/smk/amount/:amount",
         "example": "random/student/smk/amount/10",
         "parameter": "Amount - Determines the amount of data",
-        "description": "Random list of SMK students based on requested amount"
+        "description": "Random list of SMK students based on requested amount",
+        "attribute": [
+            "Id",
+            "NIS",
+            "Name",
+            "Age",
+            "Birth Place",
+            "Birth Date",
+            "Gender",
+            "Grade",
+            "Major"
+        ]
     },
     {
         "id": 10,
         "route": "random/student/sma",
         "example": "random/student/sma",
         "parameter": "",
-        "description": "Random list of SMA students"
+        "description": "Random list of SMA students",
+        "attribute": [
+            "Id",
+            "NIS",
+            "Name",
+            "Age",
+            "Birth Place",
+            "Birth Date",
+            "Gender",
+            "Grade",
+            "Major"
+        ]
     },
     {
         "id": 11,
-        "route": "random/student/sma/amount/{amount}",
+        "route": "random/student/sma/amount/:amount",
         "example": "random/student/sma/amount/10",
         "parameter": "Amount - Determines the amount of data",
-        "description": "Random list of SMA students based on requested amount"
+        "description": "Random list of SMA students based on requested amount",
+        "attribute": [
+            "Id",
+            "NIS",
+            "Name",
+            "Age",
+            "Birth Place",
+            "Birth Date",
+            "Gender",
+            "Grade",
+            "Major"
+        ]
     }
 ]
