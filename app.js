@@ -1,6 +1,6 @@
 import express from "express";
 import { port, routeArray, nameArray, birthPlaceArray, religionArray, smkMajorArray, smaMajorArray } from "./dependency.js";
-import { randomInteger, randomStudentSMK } from "./utility.js";
+import { randomInteger, randomStudentSMA, randomStudentSMK } from "./utility.js";
 
 const app = express();
 
@@ -79,6 +79,12 @@ app.get("/api/random/student/smk/amount/:amount", (req, res) => {
     const studentSMKResponse = randomStudentSMK(parseInt(req.params.amount));
 
     res.json(studentSMKResponse);
+});
+
+app.get("/api/random/student/sma", (req, res) => {
+    const studentSMAResponse = randomStudentSMA(100);
+
+    res.json(studentSMAResponse);
 });
 
 //#endregion Random
