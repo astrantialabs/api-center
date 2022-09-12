@@ -1,0 +1,79 @@
+[
+    {
+        "id": 1,
+        "route": "static/name",
+        "example": "static/name",
+        "parameter": "",
+        "description": "Static list of names"
+    },
+    {
+        "id": 2,
+        "route": "static/birth-place",
+        "example": "static/birth-place",
+        "parameter": "",
+        "description": "Static list of birth places"
+    },
+    {
+        "id": 3,
+        "route": "static/religion",
+        "example": "static/religion",
+        "parameter": "",
+        "description": "Static list of religion"
+    },
+    {
+        "id": 4,
+        "route": "static/smk-major",
+        "example": "static/smk-major",
+        "parameter": "",
+        "description": "Static list of smk majors"
+    },
+    {
+        "id": 5,
+        "route": "static/sma-major",
+        "example": "static/sma-major",
+        "parameter": "",
+        "description": "Static list of sma major"
+    },
+    {
+        "id": 6,
+        "route": "random/coinflip",
+        "example": "random/coinflip",
+        "parameter": "",
+        "description": "Coinflip random event"
+    },
+    {
+        "id": 7,
+        "route": "random/dice",
+        "example": "random/dice",
+        "parameter": "",
+        "description": "Dice random event"
+    },
+    {
+        "id": 8,
+        "route": "random/student/smk",
+        "example": "random/student/smk",
+        "parameter": "",
+        "description": "Random list of SMK students"
+    },
+    {
+        "id": 9,
+        "route": "random/student/smk/{amount}",
+        "example": "random/student/smk/10",
+        "parameter": "Amount - Determines the amount of data",
+        "description": "Random list of SMK students based on requested amount"
+    },
+    {
+        "id": 10,
+        "route": "random/student/sma",
+        "example": "random/student/sma",
+        "parameter": "",
+        "description": "Random list of SMA students"
+    },
+    {
+        "id": 11,
+        "route": "random/student/sma/{amount}",
+        "example": "random/student/sma/10",
+        "parameter": "Amount - Determines the amount of data",
+        "description": "Random list of SMA students based on requested amount"
+    }
+]
