@@ -1,6 +1,6 @@
 import express from "express";
 import { port, routeArray, nameArray, birthPlaceArray, religionArray, smkMajorArray, smaMajorArray } from "./dependency.js";
-import { randomInteger, randomUniqueInteger, nis, randomBirthPlace, randomGender, randomSMKMajor, randomGrade, randomBirthDate, dateToAge } from "./utility.js";
+import { randomInteger, randomUniqueInteger, nis, randomBirthPlace, randomGender, randomSMKMajor, randomGrade, randomBirthDate, dateToAge, randomStudentSMK } from "./utility.js";
 
 const app = express();
 
@@ -70,23 +70,13 @@ app.get("/api/random/dice", (req, res) => {
 });
 
 app.get("/api/random/student/smk", (req, res) => {
-    const randomUniqueIntegerArray = randomUniqueInteger(0, nameArray.length - 1, 100);
+    const studentSMKResponse = randomStudentSMK(100);
 
-    const studentSMKResponse = randomUniqueIntegerArray.map((randomValue, randomIndex) => {
-        const randomBirthDateValue = randomBirthDate("01-01-2004", "31-12-2006");
+    res.json(studentSMKResponse);
+});
 
-        return {
-            id: randomIndex + 1,
-            nis: nis(randomIndex + 1),
-            name: nameArray[randomValue],
-            age: dateToAge(randomBirthDateValue),
-            birthPlace: randomBirthPlace(),
-            birthDate: randomBirthDateValue,
-            gender: randomGender(),
-            grade: randomGrade(),
-            major: randomSMKMajor(),
-        };
-    });
+app.get("/api/random/student/smk/amount/:amount", (req, res) => {
+    const studentSMKResponse = randomStudentSMK(parseInt(req.params.amount));
 
     res.json(studentSMKResponse);
 });
