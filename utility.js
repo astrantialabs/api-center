@@ -94,15 +94,15 @@ export function randomSMAMajor() {
 }
 
 export function randomStudentSMK(amount) {
-    let randomIntegerArray;
+    let randomIntegerArrayValue;
 
     if (amount > nameArray.length) {
-        randomIntegerArray = randomIntegerArray(0, nameArray.length - 1, amount);
+        randomIntegerArrayValue = randomIntegerArray(0, nameArray.length - 1, amount);
     } else if (amount <= nameArray.length) {
-        randomIntegerArray = randomUniqueIntegerArray(0, nameArray.length - 1, amount);
+        randomIntegerArrayValue = randomUniqueIntegerArray(0, nameArray.length - 1, amount);
     }
 
-    const studentSMKArray = randomIntegerArray.map((integerValue, integerIndex) => {
+    const studentSMKArray = randomIntegerArrayValue.map((integerValue, integerIndex) => {
         const randomBirthDateValue = randomBirthDate("01-01-2004", "31-12-2006");
 
         return {
@@ -122,15 +122,15 @@ export function randomStudentSMK(amount) {
 }
 
 export function randomStudentSMA(amount) {
-    let randomIntegerArray;
+    let randomIntegerArrayValue;
 
     if (amount > nameArray.length) {
-        randomIntegerArray = randomIntegerArray(0, nameArray.length - 1, amount);
+        randomIntegerArrayValue = randomIntegerArray(0, nameArray.length - 1, amount);
     } else if (amount <= nameArray.length) {
-        randomIntegerArray = randomUniqueIntegerArray(0, nameArray.length - 1, amount);
+        randomIntegerArrayValue = randomUniqueIntegerArray(0, nameArray.length - 1, amount);
     }
 
-    const studentSMAArray = randomIntegerArray.map((integerValue, integerIndex) => {
+    const studentSMAArray = randomIntegerArrayValue.map((integerValue, integerIndex) => {
         const randomBirthDateValue = randomBirthDate("01-01-2004", "31-12-2006");
 
         return {
