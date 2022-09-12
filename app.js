@@ -87,4 +87,10 @@ app.get("/api/random/student/sma", (req, res) => {
     res.json(studentSMAResponse);
 });
 
+app.get("/api/random/student/sma/amount/:amount", (req, res) => {
+    const studentSMAResponse = randomStudentSMA(parseInt(req.params.amount));
+
+    res.json(studentSMAResponse);
+});
+
 //#endregion Random
