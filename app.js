@@ -1,6 +1,6 @@
 import express from "express";
 import { port, routeArray, nameArray, birthPlaceArray, religionArray, smkMajorArray, smaMajorArray } from "./dependency.js";
-import { randomInteger, randomUniqueInteger } from "./utility.js";
+import { randomInteger, randomUniqueInteger, nis, randomBirthPlace, randomGender, randomSMKMajor, randomGrade, randomBirthDate, dateToAge } from "./utility.js";
 
 const app = express();
 
@@ -67,6 +67,28 @@ app.get("/api/random/coinflip", (req, res) => {
 
 app.get("/api/random/dice", (req, res) => {
     res.json({ id: 1, type: "dice", value: randomInteger(1, 6) });
+});
+
+app.get("/api/random/student/smk", (req, res) => {
+    const randomUniqueIntegerArray = randomUniqueInteger(0, nameArray.length - 1, 100);
+
+    const studentSMKResponse = randomUniqueIntegerArray.map((randomValue, randomIndex) => {
+        const randomBirthDateValue = randomBirthDate("01-01-2004", "31-12-2006");
+
+        return {
+            id: randomIndex + 1,
+            nis: nis(randomIndex + 1),
+            name: nameArray[randomValue],
+            age: dateToAge(randomBirthDateValue),
+            birthPlace: randomBirthPlace(),
+            birthDate: randomBirthDateValue,
+            gender: randomGender(),
+            grade: randomGrade(),
+            major: randomSMKMajor(),
+        };
+    });
+
+    res.json(studentSMKResponse);
 });
 
 //#endregion Random
