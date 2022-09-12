@@ -59,8 +59,8 @@ export const routeArray = [
     },
     {
         id: 9,
-        route: "random/student/smk/{amount}",
-        example: "random/student/smk/10",
+        route: "random/student/smk/amount/{amount}",
+        example: "random/student/smk/amount/10",
         parameter: "Amount - Determines the amount of data",
         description: "Random list of SMK students based on requested amount",
     },
@@ -73,8 +73,8 @@ export const routeArray = [
     },
     {
         id: 11,
-        route: "random/student/sma/{amount}",
-        example: "random/student/sma/10",
+        route: "random/student/sma/amount/{amount}",
+        example: "random/student/sma/amount/10",
         parameter: "Amount - Determines the amount of data",
         description: "Random list of SMA students based on requested amount",
     },
