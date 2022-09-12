@@ -102,7 +102,7 @@ export function randomStudentSMK(amount) {
         randomIntegerArray = randomUniqueIntegerArray(0, nameArray.length - 1, amount);
     }
 
-    const studentSMKResponse = randomIntegerArray.map((integerValue, integerIndex) => {
+    const studentSMKArray = randomIntegerArray.map((integerValue, integerIndex) => {
         const randomBirthDateValue = randomBirthDate("01-01-2004", "31-12-2006");
 
         return {
@@ -118,5 +118,33 @@ export function randomStudentSMK(amount) {
         };
     });
 
-    return studentSMKResponse;
+    return studentSMKArray;
+}
+
+export function randomStudentSMA(amount) {
+    let randomIntegerArray;
+
+    if (amount > nameArray.length) {
+        randomIntegerArray = randomIntegerArray(0, nameArray.length - 1, amount);
+    } else if (amount <= nameArray.length) {
+        randomIntegerArray = randomUniqueIntegerArray(0, nameArray.length - 1, amount);
+    }
+
+    const studentSMAArray = randomIntegerArray.map((integerValue, integerIndex) => {
+        const randomBirthDateValue = randomBirthDate("01-01-2004", "31-12-2006");
+
+        return {
+            id: integerIndex + 1,
+            nis: nis(integerIndex + 1),
+            name: nameArray[integerValue],
+            age: dateToAge(randomBirthDateValue),
+            birthPlace: randomBirthPlace(),
+            birthDate: randomBirthDateValue,
+            gender: randomGender(),
+            grade: randomGrade(),
+            major: randomSMAMajor(),
+        };
+    });
+
+    return studentSMAArray;
 }
