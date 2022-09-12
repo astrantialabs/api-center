@@ -1,6 +1,6 @@
 import express from "express";
 import { port, routeArray, nameArray, birthPlaceArray, religionArray, smkMajorArray, smaMajorArray } from "./dependency.js";
-import { randomInteger, randomUniqueInteger, nis, randomBirthPlace, randomGender, randomSMKMajor, randomGrade, randomBirthDate, dateToAge, randomStudentSMK } from "./utility.js";
+import { randomInteger, randomStudentSMK } from "./utility.js";
 
 const app = express();
 

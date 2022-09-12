@@ -10,7 +10,17 @@ export function randomInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-export function randomUniqueInteger(min, max, amount) {
+export function randomIntegerArray(min, max, amount) {
+    const randomIntegerArray = [];
+
+    for (let i = 0; i < amount; i++) {
+        randomIntegerArray.push(randomInteger(min, max));
+    }
+
+    return randomIntegerArray;
+}
+
+export function randomUniqueIntegerArray(min, max, amount) {
     const randomUniqueIntegerArray = [];
 
     for (let i = 0; i < amount; i++) {
@@ -80,9 +90,15 @@ export function randomSMKMajor() {
 }
 
 export function randomStudentSMK(amount) {
-    const randomUniqueIntegerArray = randomUniqueInteger(0, nameArray.length - 1, amount);
+    let randomNameArray;
 
-    const studentSMKResponse = randomUniqueIntegerArray.map((randomValue, randomIndex) => {
+    if (amount > nameArray.length) {
+        randomNameArray = randomIntegerArray(0, nameArray.length - 1, amount);
+    } else if (amount <= nameArray.length) {
+        randomNameArray = randomUniqueIntegerArray(0, nameArray.length - 1, amount);
+    }
+
+    const studentSMKResponse = randomNameArray.map((randomValue, randomIndex) => {
         const randomBirthDateValue = randomBirthDate("01-01-2004", "31-12-2006");
 
         return {
