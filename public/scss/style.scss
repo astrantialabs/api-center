@@ -3,33 +3,264 @@
 $dark: #363636;
 $light: #f5f5f5;
 
-html, body {
-    font-family: 'Be Vietnam Pro', sans-serif;
+$primary-background: #0b1715;
+$primary-foreground: #dbe1e8;
+$secondary-background: #02110e;
+$secondary-foreground: #ccd9dc;
+$accent: rgba(155, 225, 255, 0.8);
+
+::selection {
+    background-color: rgba(155, 225, 255, 0.5);
+}
+
+html,
+body {
+    font-family: "Be Vietnam Pro", sans-serif;
     text-rendering: optimizeLegibility;
     touch-action: manipulation;
 }
 
-html {
-    scroll-behavior: smooth;
-
-    #home_page {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../image/background.png");
-        background-size: contain;
+body {
+    #navbar {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.713), rgb(11, 23, 21)),
+            url("https://images.unsplash.com/photo-1662904162853-cfc087b8d621?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+        background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
 
         .navbar-item {
-            padding: 0px 15px !important;
-            margin: 0px !important;
-            margin-top: 10px !important;
-            margin-left: 10px !important;
+            padding: 0px 15px;
+            margin: 0px;
+            margin-top: 10px;
+            margin-left: 10px;
 
-            border-radius: 20px !important;
+            border-radius: 8px;
+            color: $primary-foreground;
 
             &:hover {
-                color: $dark !important;
-                background-color: $light !important;
+                color: $primary-background;
+                background-color: $primary-foreground;
+            }
+        }
+
+        .hero-body {
+            .title {
+                color: $primary-foreground;
+                font-size: 42px;
+            }
+            .subtitle {
+                color: $secondary-foreground;
+                font-size: 20px;
+                line-height: 1.4;
             }
         }
     }
+
+    #about {
+        padding-top: 150px;
+        padding-bottom: 180px;
+
+        .subtitle {
+            max-width: 850px;
+        }
+    }
+
+    #routes {
+        padding-bottom: 180px;
+    }
+
+
+    #about, #routes {
+        background: $primary-background;
+        .title {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.8;
+            color: $primary-foreground;
+        }
+        .subtitle {
+            font-size: 18px;
+            line-height: 1.4;
+            color: $secondary-foreground;
+        }
+        .badges {
+            width: 750px;
+            .badge {
+                margin: 0px 2.5px 5px 2.5px;
+                border: 1.5px solid $secondary-background;
+            }
+        }
+
+        .table {
+            th {
+                color: $primary-foreground;
+            }
+            td {
+                color: $secondary-foreground;
+            }
+            a {
+                color: $accent;
+
+                &:hover {
+                    color: lighten($color: $accent, $amount: 10);
+                }
+            }
+        }
+    }
+
+    #footer {
+        background: $secondary-background;
+
+        p {
+            color: $primary-foreground;
+        }
+        h6 {
+            color: $secondary-foreground;
+
+            a {
+                color: $accent;
+
+                &:hover {
+                    color: lighten($color: $accent, $amount: 10);
+                }
+            }
+        }
+    }
+}
+ul li {
+    margin: 0 0 24px;
+}
+
+.the-arrow {
+    width: 1px;
+    transition: all 0.2s;
+}
+.the-arrow.-left {
+    position: absolute;
+    top: 60%;
+    left: 0;
+}
+.the-arrow.-left > .shaft {
+    width: 0;
+    background-color: $primary-foreground;
+}
+.the-arrow.-left > .shaft:before,
+.the-arrow.-left > .shaft:after {
+    width: 0;
+    background-color: $primary-foreground;
+}
+.the-arrow.-left > .shaft:before {
+    transform: rotate(0);
+}
+.the-arrow.-left > .shaft:after {
+    transform: rotate(0);
+}
+.the-arrow.-right {
+    top: 3px;
+}
+.the-arrow.-right > .shaft {
+    width: 1px;
+    transition-delay: 0.2s;
+}
+.the-arrow.-right > .shaft:before,
+.the-arrow.-right > .shaft:after {
+    width: 8px;
+    transition-delay: 0.3s;
+    transition: all 0.5s;
+}
+.the-arrow.-right > .shaft:before {
+    transform: rotate(40deg);
+}
+.the-arrow.-right > .shaft:after {
+    transform: rotate(-40deg);
+}
+.the-arrow > .shaft {
+    background-color: $primary-foreground;
+    display: block;
+    height: 1px;
+    position: relative;
+    transition: all 0.2s;
+    transition-delay: 0;
+    will-change: transform;
+}
+.the-arrow > .shaft:before,
+.the-arrow > .shaft:after {
+    background-color: $primary-foreground;
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all 0.2s;
+    transition-delay: 0;
+}
+.the-arrow > .shaft:before {
+    transform-origin: top right;
+}
+.the-arrow > .shaft:after {
+    transform-origin: bottom right;
+}
+
+.animated-arrow {
+    display: inline-block;
+    color: $primary-foreground;
+    font-size: 1.25em;
+    font-style: italic;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.2s;
+}
+.animated-arrow:hover {
+    color: $primary-foreground;
+}
+.animated-arrow:hover > .the-arrow.-left > .shaft {
+    width: 64px;
+    transition-delay: 0.1s;
+    background-color: $primary-foreground;
+}
+.animated-arrow:hover > .the-arrow.-left > .shaft:before,
+.animated-arrow:hover > .the-arrow.-left > .shaft:after {
+    width: 8px;
+    transition-delay: 0.1s;
+    background-color: $primary-foreground;
+}
+.animated-arrow:hover > .the-arrow.-left > .shaft:before {
+    transform: rotate(40deg);
+}
+.animated-arrow:hover > .the-arrow.-left > .shaft:after {
+    transform: rotate(-40deg);
+}
+.animated-arrow:hover > .main {
+    transform: translateX(17px);
+    transform: translateX(80px);
+}
+.animated-arrow:hover > .main > .the-arrow.-right > .shaft {
+    width: 0;
+    transform: translateX(200%);
+    transition-delay: 0;
+}
+.animated-arrow:hover > .main > .the-arrow.-right > .shaft:before,
+.animated-arrow:hover > .main > .the-arrow.-right > .shaft:after {
+    width: 0;
+    transition-delay: 0;
+    transition: all 0.1s;
+}
+.animated-arrow:hover > .main > .the-arrow.-right > .shaft:before {
+    transform: rotate(0);
+}
+.animated-arrow:hover > .main > .the-arrow.-right > .shaft:after {
+    transform: rotate(0);
+}
+.animated-arrow > .main {
+    display: flex;
+    align-items: center;
+    transition: all 0.2s;
+}
+.animated-arrow > .main > .text {
+    margin: 0 16px 0 0;
+    line-height: 1;
+}
+.animated-arrow > .main > .the-arrow {
+    position: relative;
 }
