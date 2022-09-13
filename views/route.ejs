@@ -6,43 +6,107 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>API Center | <%= title %></title>
 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
-        <link rel="stylesheet" href="css/style.css" />
+
+        <style>
+            ::selection {
+                background-color: rgba(155, 225, 255, 0.5);
+            }
+            html,
+            body {
+                background: #0b1715;
+                font-family: "Be Vietnam Pro", sans-serif;
+                text-rendering: optimizeLegibility;
+                touch-action: manipulation;
+            }
+            .title {
+                color: #dbe1e8;
+                font-size: 24px;
+                font-weight: 600;
+                line-height: 1.8;
+            }
+            body #about .table th,
+            body #routes .table th {
+                color: #dbe1e8;
+            }
+            body .table td,
+            body .table td {
+                color: #ccd9dc;
+            }
+            body .table a,
+            body .table a {
+                color: rgba(155, 225, 255, 0.8);
+            }
+            body .table a:hover,
+            body .table a:hover {
+                color: rgba(206, 240, 255, 0.8);
+            }
+            body #footer {
+                background: #02110e;
+            }
+            body #footer p {
+                color: #dbe1e8;
+            }
+            body #footer h6 {
+                color: #ccd9dc;
+            }
+            body #footer h6 a {
+                color: rgba(155, 225, 255, 0.8);
+            }
+            body #footer h6 a:hover {
+                color: rgba(206, 240, 255, 0.8);
+            }
+        </style>
     </head>
 
-    <body class="">
-        <section class="section is-small" id="route_page">
+    <body>
+        <section class="section is-small" id="static">
             <div class="container">
                 <div class="content">
                     <div class="title"><%= title %></div>
-                    <table class="table is-bordered is-striped is-fullwidth is-hoverable">
-                        <thead>
-                            <tr>
-                                <th class="has-text-centered">No.</th>
+                    <div class="columns">
+                        <div class="column is-10">
+                            <table class="table is-bordered is-fullwidth">
+                                <thead style="background: #0b1715">
+                                    <tr>
+                                        <th style="color: #ccd9dc;" class="has-text-centered">No.</th>
 
-                                <% routeObject.attribute.forEach(attribute => { if ( attribute != "Id") {%>
-                                <th class="has-text-centered"><%= attribute %></th>
-                                <% }}); %>
-                            </tr>
-                        </thead>
+                                        <% routeObject.attribute.forEach(attribute => { if ( attribute != "Id") {%>
+                                        <th style="color: #ccd9dc;" class="has-text-centered"><%= attribute %></th>
+                                        <% }}); %>
+                                    </tr>
+                                </thead>
 
-                        <tbody>
-                            <% let numberCount = 0; responseObject.forEach((object) => { numberCount += 1; %>
-                            <tr>
-                                <td class="has-text-centered"><%= numberCount %></td>
+                                <tbody style="background: #0b1715">
+                                    <% let numberCount = 0; responseObject.forEach((object) => { numberCount += 1; %>
+                                    <tr>
+                                        <td class="has-text-centered"><%= numberCount %></td>
 
-                                <% Object.entries(object).slice(1).forEach(attribute => { %>
-                                <td><%= attribute[1] %></td>
-                                <% }); %>
-                            </tr>
-                            <% }); %>
-                        </tbody>
-                    </table>
+                                        <% Object.entries(object).slice(1).forEach(attribute => { %>
+                                        <td><%= attribute[1] %></td>
+                                        <% }); %>
+                                    </tr>
+                                    <% }); %>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="column">
+                            <div class="buttons">
+                                <a href="/" class="button">Kembali</a>
+                                <a href="" class="button is-link">Download Sebagai JSON</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <footer class="footer has-background-light" id="contributor_page">
+        <footer class="footer" id="footer">
             <div class="content has-text-centered">
                 <p>Dibuat dan Dikembangkan oleh</p>
                 <h6>
