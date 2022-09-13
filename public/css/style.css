@@ -1,3 +1,8 @@
+html, body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  text-rendering: optimizeLegibility;
+  touch-action: manipulation; }
+
 html {
   scroll-behavior: smooth; }
   html #home_page {
