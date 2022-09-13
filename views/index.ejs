@@ -6,8 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>API Center</title>
 
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
         <link rel="stylesheet" href="css/style.css" />
     </head>
@@ -29,29 +32,23 @@
 
             <div class="hero-body">
                 <div class="container has-text-centered" style="display: flex; flex-direction: column; justify-content: center; align-items: center">
-                    <h1 class="title">
-                        API Center
-                    </h1>
-                    <p class="subtitle">
-                        Centre of static and random data
-                    </p>
+                    <h1 class="title">API Center</h1>
+                    <p class="subtitle">Center of static and random data</p>
                     <ul>
                         <li>
-                          <a class='animated-arrow' href='#about'>
-                            <span class='the-arrow -left'>
-                              <span class='shaft'></span>
-                            </span>
-                            <span class='main'>
-                              <span class='text'>
-                                Read More
-                              </span>
-                              <span class='the-arrow -right'>
-                                <span class='shaft'></span>
-                              </span>
-                            </span>
-                          </a>
+                            <a class="animated-arrow" href="#about">
+                                <span class="the-arrow -left">
+                                    <span class="shaft"></span>
+                                </span>
+                                <span class="main">
+                                    <span class="text"> Read More </span>
+                                    <span class="the-arrow -right">
+                                        <span class="shaft"></span>
+                                    </span>
+                                </span>
+                            </a>
                         </li>
-                      </ul>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -59,12 +56,10 @@
         <section class="section" id="about">
             <div class="container">
                 <div class="content">
-                    <h2 class="title">
-                        About
-                    </h2>
+                    <h2 class="title">About</h2>
                     <p class="subtitle">
-                        Application Programming Interface or otherwise known as API is a bridge for a application's data and
-                        functionality to be accessed or utilized by others, such as third-party developers, foreign systems, and other applications
+                        Application Programming Interface or otherwise known as API is a bridge for an application's data and functionality to be accessed or utilized by others, such as third-party
+                        developers, foreign systems, and even by other applications.
                     </p>
                     <div class="badges">
                         <% markdownBadgeArray.forEach(markdownBadge => { %>
@@ -78,11 +73,9 @@
         <section class="section" id="routes">
             <div class="container">
                 <div class="content">
-                    <h2 class="title">
-                        Routes
-                    </h2>
+                    <h2 class="title">Routes</h2>
                     <table class="table is-bordered is-fullwidth">
-                        <thead style="background: #0b1715;">
+                        <thead style="background: #0b1715">
                             <tr>
                                 <th class="has-text-centered">No.</th>
                                 <th class="has-text-centered">Route</th>
@@ -91,7 +84,7 @@
                             </tr>
                         </thead>
 
-                        <tbody style="background: #0b1715;">
+                        <tbody style="background: #0b1715">
                             <% let routeCount = 0; routeArray.forEach(route => { routeCount += 1; %>
                             <tr>
                                 <td class="has-text-centered"><%= routeCount %></td>
@@ -110,7 +103,7 @@
 
         <footer class="footer" id="footer">
             <div class="content has-text-centered">
-                <p>Dibuat dan Dikembangkan oleh</p>
+                <p>Developed by</p>
                 <h6>
                     <a href="https://github.com/sorystia1">Muhammad Farhan</a>, <a href="https://github.com/NotHydra">Rizky Irswanda</a> & <a href="https://github.com/yehezkieldio">Yehezkiel Dio</a>
                 </h6>
