@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" class="has-background-light">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>API Center | <%= title %></title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+
+    <body class="">
+        <section class="section is-small" id="route_page">
+            <div class="container">
+                <div class="content">
+                    <div class="title"><%= title %></div>
+                    <table class="table is-bordered is-striped is-fullwidth is-hoverable">
+                        <thead>
+                            <tr>
+                                <th class="has-text-centered">No.</th>
+
+                                <% routeObject.attribute.forEach(attribute => { if ( attribute != "Id") {%>
+                                <th class="has-text-centered"><%= attribute %></th>
+                                <% }}); %>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <% let numberCount = 0; responseObject.forEach((object) => { numberCount += 1; %>
+                            <tr>
+                                <td class="has-text-centered"><%= numberCount %></td>
+
+                                <% Object.entries(object).slice(1).forEach(attribute => { %>
+                                <td><%= attribute[1] %></td>
+                                <% }); %>
+                            </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer has-background-light" id="contributor_page">
+            <div class="content has-text-centered">
+                <p>Dibuat dan Dikembangkan oleh</p>
+                <h6>
+                    <a href="https://github.com/sorystia1">Muhammad Farhan</a>, <a href="https://github.com/NotHydra">Rizky Irswanda</a> & <a href="https://github.com/yehezkieldio">Yehezkiel Dio</a>
+                </h6>
+            </div>
+        </footer>
+    </body>
+</html>

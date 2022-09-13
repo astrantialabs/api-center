@@ -7,6 +7,7 @@ export const routeArray = [
         example: "static/name",
         parameter: "",
         description: "Static list of names",
+        attribute: ["Id", "Name"],
     },
     {
         id: 2,
@@ -14,6 +15,7 @@ export const routeArray = [
         example: "static/birth-place",
         parameter: "",
         description: "Static list of birth places",
+        attribute: ["Id", "Birth Place"],
     },
     {
         id: 3,
@@ -21,6 +23,7 @@ export const routeArray = [
         example: "static/religion",
         parameter: "",
         description: "Static list of religion",
+        attribute: ["Id", "Religion"],
     },
     {
         id: 4,
@@ -28,6 +31,7 @@ export const routeArray = [
         example: "static/smk-major",
         parameter: "",
         description: "Static list of smk majors",
+        attribute: ["Id", "SMK Major"],
     },
     {
         id: 5,
@@ -35,6 +39,7 @@ export const routeArray = [
         example: "static/sma-major",
         parameter: "",
         description: "Static list of sma major",
+        attribute: ["Id", "SMA Major"],
     },
     {
         id: 6,
@@ -42,6 +47,7 @@ export const routeArray = [
         example: "random/coinflip",
         parameter: "",
         description: "Coinflip random event",
+        attribute: ["Id", "Type", "Value"],
     },
     {
         id: 7,
@@ -49,6 +55,7 @@ export const routeArray = [
         example: "random/dice",
         parameter: "",
         description: "Dice random event",
+        attribute: ["Id", "Type", "Value"],
     },
     {
         id: 8,
@@ -56,13 +63,15 @@ export const routeArray = [
         example: "random/student/smk",
         parameter: "",
         description: "Random list of SMK students",
+        attribute: ["Id", "NIS", "Name", "Age", "Birth Place", "Birth Date", "Gender", "Grade", "Major"],
     },
     {
         id: 9,
-        route: "random/student/smk/amount/{amount}",
+        route: "random/student/smk/amount/:amount",
         example: "random/student/smk/amount/10",
         parameter: "Amount - Determines the amount of data",
         description: "Random list of SMK students based on requested amount",
+        attribute: ["Id", "NIS", "Name", "Age", "Birth Place", "Birth Date", "Gender", "Grade", "Major"],
     },
     {
         id: 10,
@@ -70,13 +79,15 @@ export const routeArray = [
         example: "random/student/sma",
         parameter: "",
         description: "Random list of SMA students",
+        attribute: ["Id", "NIS", "Name", "Age", "Birth Place", "Birth Date", "Gender", "Grade", "Major"],
     },
     {
         id: 11,
-        route: "random/student/sma/amount/{amount}",
+        route: "random/student/sma/amount/:amount",
         example: "random/student/sma/amount/10",
         parameter: "Amount - Determines the amount of data",
         description: "Random list of SMA students based on requested amount",
+        attribute: ["Id", "NIS", "Name", "Age", "Birth Place", "Birth Date", "Gender", "Grade", "Major"],
     },
 ];
 

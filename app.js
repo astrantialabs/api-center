@@ -17,80 +17,149 @@ app.get("/", (req, res) => {
 
 //#region Static
 
-app.get("/api/static/name", (req, res) => {
-    const nameResponse = nameArray.map((name, nameIndex) => {
+app.get("/static/name", (req, res) => {
+    const responseObject = nameArray.map((name, nameIndex) => {
         return { id: nameIndex + 1, name: name };
     });
 
-    res.json(nameResponse);
+    const routeObject = routeArray.find((route) => {
+        if (route.route == "static/name") {
+            return route;
+        }
+    });
+
+    res.render("route", { title: "Static Name", responseObject: responseObject, routeObject: routeObject });
 });
 
-app.get("/api/static/birth-place", (req, res) => {
-    const birthPlaceResponse = birthPlaceArray.map((birthPlace, birthPlaceIndex) => {
+app.get("/static/birth-place", (req, res) => {
+    const responseObject = birthPlaceArray.map((birthPlace, birthPlaceIndex) => {
         return { id: birthPlaceIndex + 1, birthPlace: birthPlace };
     });
 
-    res.json(birthPlaceResponse);
+    const routeObject = routeArray.find((route) => {
+        if (route.route == "static/birth-place") {
+            return route;
+        }
+    });
+
+    res.render("route", { title: "Static Birth Place", responseObject: responseObject, routeObject: routeObject });
 });
 
-app.get("/api/static/religion", (req, res) => {
-    const religionResponse = religionArray.map((religion, religionIndex) => {
+app.get("/static/religion", (req, res) => {
+    const responseObject = religionArray.map((religion, religionIndex) => {
         return { id: religionIndex + 1, religion: religion };
     });
 
-    res.json(religionResponse);
-});
-
-app.get("/api/static/smk-major", (req, res) => {
-    const smkMajorResponse = smkMajorArray.map((smkMajor, smkMajorIndex) => {
-        return { id: smkMajorIndex + 1, smkMajor: smkMajor };
+    const routeObject = routeArray.find((route) => {
+        if (route.route == "static/religion") {
+            return route;
+        }
     });
 
-    res.json(smkMajorResponse);
+    res.render("route", { title: "Static Religion", responseObject: responseObject, routeObject: routeObject });
 });
 
-app.get("/api/static/sma-major", (req, res) => {
-    const smaMajorResponse = smaMajorArray.map((smaMajor, smaMajorIndex) => {
+app.get("/static/smk-major", (req, res) => {
+    const responseObject = smkMajorArray.map((smkMajor, smkMajorIndex) => {
+        return { id: smkMajorIndex + 1, smkMajor: smkMajor };
+    });
+    const routeObject = routeArray.find((route) => {
+        if (route.route == "static/smk-major") {
+            return route;
+        }
+    });
+
+    res.render("route", { title: "Static SMK Major", responseObject: responseObject, routeObject: routeObject });
+});
+
+app.get("/static/sma-major", (req, res) => {
+    const responseObject = smaMajorArray.map((smaMajor, smaMajorIndex) => {
         return { id: smaMajorIndex + 1, smaMajor: smaMajor };
     });
 
-    res.json(smaMajorResponse);
+    const routeObject = routeArray.find((route) => {
+        if (route.route == "static/sma-major") {
+            return route;
+        }
+    });
+
+    res.render("route", { title: "Static SMA Major", responseObject: responseObject, routeObject: routeObject });
 });
 
 //#endregion Static
 
 //#region Random
 
-app.get("/api/random/coinflip", (req, res) => {
-    res.json({ id: 1, type: "coinflip", value: randomInteger(0, 1) });
+app.get("/random/coinflip", (req, res) => {
+    const responseObject = [{ id: 1, type: "coinflip", value: randomInteger(0, 1) }];
+
+    const routeObject = routeArray.find((route) => {
+        if (route.route == "random/coinflip") {
+            return route;
+        }
+    });
+
+    res.render("route", { title: "Random Coin Flip", responseObject: responseObject, routeObject: routeObject });
 });
 
-app.get("/api/random/dice", (req, res) => {
-    res.json({ id: 1, type: "dice", value: randomInteger(1, 6) });
+app.get("/random/dice", (req, res) => {
+    const responseObject = [{ id: 1, type: "dice", value: randomInteger(1, 6) }];
+
+    const routeObject = routeArray.find((route) => {
+        if (route.route == "random/dice") {
+            return route;
+        }
+    });
+
+    res.render("route", { title: "Random Dice", responseObject: responseObject, routeObject: routeObject });
 });
 
-app.get("/api/random/student/smk", (req, res) => {
-    const studentSMKResponse = randomStudentSMK(100);
+app.get("/random/student/smk", (req, res) => {
+    const responseObject = randomStudentSMK(100);
 
-    res.json(studentSMKResponse);
+    const routeObject = routeArray.find((route) => {
+        if (route.route == "random/student/smk") {
+            return route;
+        }
+    });
+
+    res.render("route", { title: "Random Student SMK", responseObject: responseObject, routeObject: routeObject });
 });
 
-app.get("/api/random/student/smk/amount/:amount", (req, res) => {
-    const studentSMKResponse = randomStudentSMK(parseInt(req.params.amount));
+app.get("/random/student/smk/amount/:amount", (req, res) => {
+    const responseObject = randomStudentSMK(parseInt(req.params.amount));
 
-    res.json(studentSMKResponse);
+    const routeObject = routeArray.find((route) => {
+        if (route.route == "random/student/smk/amount/:amount") {
+            return route;
+        }
+    });
+
+    res.render("route", { title: `Random Student SMK by ${req.params.amount} Amount`, responseObject: responseObject, routeObject: routeObject });
 });
 
-app.get("/api/random/student/sma", (req, res) => {
-    const studentSMAResponse = randomStudentSMA(100);
+app.get("/random/student/sma", (req, res) => {
+    const responseObject = randomStudentSMA(100);
 
-    res.json(studentSMAResponse);
+    const routeObject = routeArray.find((route) => {
+        if (route.route == "random/student/sma") {
+            return route;
+        }
+    });
+
+    res.render("route", { title: "Random Student SMA", responseObject: responseObject, routeObject: routeObject });
 });
 
-app.get("/api/random/student/sma/amount/:amount", (req, res) => {
-    const studentSMAResponse = randomStudentSMA(parseInt(req.params.amount));
+app.get("/random/student/sma/amount/:amount", (req, res) => {
+    const responseObject = randomStudentSMA(parseInt(req.params.amount));
 
-    res.json(studentSMAResponse);
+    const routeObject = routeArray.find((route) => {
+        if (route.route == "random/student/sma/amount/:amount") {
+            return route;
+        }
+    });
+
+    res.render("route", { title: `Random Student SMA by ${req.params.amount} Amount`, responseObject: responseObject, routeObject: routeObject });
 });
 
 //#endregion Random
