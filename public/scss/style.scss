@@ -18,6 +18,8 @@ body {
     font-family: "Be Vietnam Pro", sans-serif;
     text-rendering: optimizeLegibility;
     touch-action: manipulation;
+
+    scroll-behavior: smooth;
 }
 
 body {
@@ -68,7 +70,8 @@ body {
     #routes {
         padding-bottom: 180px;
     }
-    #about, #routes {
+    #about,
+    #routes {
         background: $primary-background;
         .title {
             font-size: 24px;

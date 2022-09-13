@@ -5,7 +5,8 @@ html,
 body {
   font-family: "Be Vietnam Pro", sans-serif;
   text-rendering: optimizeLegibility;
-  touch-action: manipulation; }
+  touch-action: manipulation;
+  scroll-behavior: smooth; }
 
 body #navbar {
   background-image: linear-gradient(rgba(0, 0, 0, 0.713), #0b1715), url("https://images.unsplash.com/photo-1662904162853-cfc087b8d621?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
@@ -39,29 +40,38 @@ body #about {
 body #routes {
   padding-bottom: 180px; }
 
-body #about, body #routes {
+body #about,
+body #routes {
   background: #0b1715; }
-  body #about .title, body #routes .title {
+  body #about .title,
+  body #routes .title {
     font-size: 24px;
     font-weight: 600;
     line-height: 1.8;
     color: #dbe1e8; }
-  body #about .subtitle, body #routes .subtitle {
+  body #about .subtitle,
+  body #routes .subtitle {
     font-size: 18px;
     line-height: 1.4;
     color: #ccd9dc; }
-  body #about .badges, body #routes .badges {
+  body #about .badges,
+  body #routes .badges {
     width: 750px; }
-    body #about .badges .badge, body #routes .badges .badge {
+    body #about .badges .badge,
+    body #routes .badges .badge {
       margin: 0px 2.5px 5px 2.5px;
       border: 1.5px solid #02110e; }
-  body #about .table th, body #routes .table th {
+  body #about .table th,
+  body #routes .table th {
     color: #dbe1e8; }
-  body #about .table td, body #routes .table td {
+  body #about .table td,
+  body #routes .table td {
     color: #ccd9dc; }
-  body #about .table a, body #routes .table a {
+  body #about .table a,
+  body #routes .table a {
     color: rgba(155, 225, 255, 0.8); }
-    body #about .table a:hover, body #routes .table a:hover {
+    body #about .table a:hover,
+    body #routes .table a:hover {
       color: rgba(206, 240, 255, 0.8); }
 
 body #footer {
