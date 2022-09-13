@@ -95,10 +95,12 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="column mr-5" style="position: fixed; right: 0">
+
+                        <div class="column" style="margin-right: 3rem; position: fixed; right: 0">
                             <div class="buttons">
-                                <a href="/#routes" class="button is-fullwidth">Back</a>
-                                <a href="" class="button is-fullwidth is-link">Download as JSON</a>
+                                <a href="/#routes" class="button is-fullwidth is-danger">Back</a>
+                                <a href="" class="button is-fullwidth is-warning">Refresh</a>
+                                <a href="/api/<%= routeObject.example %>" class="button is-fullwidth is-link">API</a>
                             </div>
                         </div>
                     </div>
