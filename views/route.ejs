@@ -74,10 +74,10 @@
                             <table class="table is-bordered is-fullwidth">
                                 <thead style="background: #0b1715">
                                     <tr>
-                                        <th style="color: #ccd9dc;" class="has-text-centered">No.</th>
+                                        <th style="color: #ccd9dc" class="has-text-centered">No.</th>
 
                                         <% routeObject.attribute.forEach(attribute => { if ( attribute != "Id") {%>
-                                        <th style="color: #ccd9dc;" class="has-text-centered"><%= attribute %></th>
+                                        <th style="color: #ccd9dc" class="has-text-centered"><%= attribute %></th>
                                         <% }}); %>
                                     </tr>
                                 </thead>
@@ -97,8 +97,8 @@
                         </div>
                         <div class="column">
                             <div class="buttons">
-                                <a href="/" class="button">Kembali</a>
-                                <a href="" class="button is-link">Download Sebagai JSON</a>
+                                <a href="/#routes" class="button is-fullwidth">Kembali</a>
+                                <a href="" class="button is-fullwidth is-link">Download as JSON</a>
                             </div>
                         </div>
                     </div>
